@@ -1,6 +1,6 @@
 import random
 
-correct = 'you guessed correctly! It took you {} tries'.format(guess_number)
+correct = 'you guessed correctly!'
 too_low = 'too low'
 too_high = 'too high'
 
@@ -37,19 +37,22 @@ def check_guess(guess, secret):
 
 
 def main():
-
+    guess_number = 0
     (low, high) = configure_range()
     secret = generate_secret(low, high)
-
 
     while True:
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
-        guess_number = +1
+        guess_number+=1
 
         if result == correct:
-            break
+            print('You had ' guess_number' tries!')
+            play_again = input("Play again! Please type 1 for no: ")
+            if play_again == 1:
+                break
+
 
 
 if __name__ == '__main__':
