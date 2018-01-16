@@ -1,6 +1,6 @@
 import random
 
-correct = 'you guessed correctly!'
+correct = 'you guessed correctly! It took you {} tries'.format(guess_number)
 too_low = 'too low'
 too_high = 'too high'
 
@@ -46,6 +46,7 @@ def main():
         guess = get_guess()
         result = check_guess(guess, secret)
         print(result)
+        guess_number = +1
 
         if result == correct:
             break
