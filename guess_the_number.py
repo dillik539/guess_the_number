@@ -48,7 +48,7 @@ def main():
         guess_number+=1
 
         if result == correct:
-            print('You had ' guess_number' tries!')
+            print('You had ', guess_number ,' tries!')
             play_again = input("Play again! Please type 1 for no: ")
             if play_again == 1:
                 break
