@@ -38,19 +38,23 @@ def check_guess(guess, secret):
 
 def main():
     userRange = int(input("What range you want to generate? "))
+    guess_number = 0
     (low, userRange) = configure_range()
     secret = generate_secret(low, userRange)
-
 
     while True:
         guess = get_guess()
 
         result = check_guess(guess, secret)
         print(result)
-        guess_number = +1
+        guess_number+=1
 
         if result == correct:
-            break
+            print('You had ', guess_number ,' tries!')
+            play_again = input("Play again! Please type 1 for no: ")
+            if play_again == 1:
+                break
+
 
 
 if __name__ == '__main__':
